@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:nsd/nsd.dart';
@@ -24,7 +25,7 @@ class AvailableRoomsPage extends HookWidget {
     final isLoading = useState<bool>(true);
     final services = useState<List<Service>>([]);
     final opponentName = useState<String?>(null);
-    final isMounted = useIsMounted();
+    final isMounted = context.mounted;
 
     var inGame = false;
 
@@ -106,7 +107,9 @@ class AvailableRoomsPage extends HookWidget {
                     .listen(
                   (message) async {
                     if (message == 'error:already_in_game') {
-                      print('Already in game with someone else');
+                      if (kDebugMode) {
+                        print('Already in game with someone else');
+                      }
                     } else if (message.startsWith('success')) {
                       final parts = message.split(':');
 
@@ -154,7 +157,7 @@ class AvailableRoomsPage extends HookWidget {
                         inGame = false;
                         socket.write('event:left');
                       } else if (eventCode == 'left') {
-                        if (inGame && isMounted()) {
+                        if (inGame && isMounted) {
                           context.pop();
                         }
                       }
@@ -167,7 +170,9 @@ class AvailableRoomsPage extends HookWidget {
                   },
                 );
               } on SocketException catch (e) {
-                print('This server is not available: $e');
+                if (kDebugMode) {
+                  print('This server is not available: $e');
+                }
               }
             },
           );

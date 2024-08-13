@@ -63,7 +63,7 @@ class GameMatch {
   List<List<int>>? _computeWinnerCells() {
     for (final solution in kSolutions) {
       final winner = {
-        for (final position in solution) board[position[0]][position[1]]
+        for (final position in solution) board[position[0]][position[1]],
       };
 
       if (winner.first != null && winner.length == 1) {

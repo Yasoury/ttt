@@ -43,7 +43,7 @@ class FullScreenInputPage extends HookWidget {
                 controller: controller,
                 autofocus: true,
                 inputFormatters: [
-                  FilteringTextInputFormatter.allow(RegExp('[a-zA-Z0-9_ ]'))
+                  FilteringTextInputFormatter.allow(RegExp('[a-zA-Z0-9_ ]')),
                 ],
                 style: kFullScreenTextFieldTxt,
                 cursorColor: kDarkerColor,

@@ -30,7 +30,7 @@ const kDefaultRoomNames = [
   'Cooking Chapter',
   'Navigation Chapter',
   'Fashion Chapter',
-  'Meeting Chapter'
+  'Meeting Chapter',
 ];
 
 String generateDefaultRoomName() =>

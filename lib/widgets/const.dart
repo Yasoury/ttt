@@ -6,5 +6,5 @@ const kTransparentDivider = Divider(color: kTransparent);
 const kLargeDivider = [
   kTransparentDivider,
   kTransparentDivider,
-  kTransparentDivider
+  kTransparentDivider,
 ];

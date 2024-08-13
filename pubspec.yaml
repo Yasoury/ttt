@@ -31,9 +31,9 @@ dependencies:
   dotted_border: ^2.0.0+2
   flutter:
     sdk: flutter
-  flutter_hooks: ^0.18.3
-  nsd: ^1.5.3
-  pixelarticons: ^0.1.0
+  flutter_hooks: ^0.20.5
+  nsd: ^3.0.0
+  pixelarticons: ^0.4.0
   shared_preferences: ^2.0.15
 
 dependency_overrides:
@@ -43,7 +43,7 @@ dev_dependencies:
   flutter_launcher_icons_maker: ^0.10.2
   flutter_test:
     sdk: flutter
-  lint: ^1.8.2
+  lint: ^2.3.0
 
 # The following section is specific to Flutter.
 flutter:
